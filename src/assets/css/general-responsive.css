@@ -1,0 +1,219 @@
+/* general-responsive.css */
+
+/* 
+  NOTE:
+  - These are example breakpoints and styles.
+  - Tweak them to match your exact needs and designs.
+  - Use !important sparingly, only if absolutely necessary.
+*/
+
+/* ============================================ */
+/* ============== Global Styles =============== */
+/* ============================================ */
+
+/* Make all images responsive by default */
+img,
+.card-img-top {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Handle .whatsapp_float on smaller screens */
+@media (max-width: 576px) {
+    .whatsapp_float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 18px;
+    }
+}
+
+/* ============================================ */
+/* =========== Typography & Spacing =========== */
+/* ============================================ */
+
+/* Example: scale down .fs-7 and .fs-8 on smaller screens */
+@media (max-width: 576px) {
+    .fs-7 {
+        font-size: 0.8rem !important;
+    }
+    .fs-8 {
+        font-size: 0.75rem !important;
+    }
+
+    .main_section .search_cards .card-title {
+        font-size: 0.7rem !important;
+    }
+
+    .unit_img_container {
+        height: 170px !important;
+    }
+}
+
+/* Example: handle big headings like .map-title */
+@media (max-width: 576px) {
+    .map-title {
+        font-size: 1.25rem !important; /* or whatever smaller size you prefer */
+    }
+}
+
+/* Reduce padding/margins on some sections at mobile widths */
+@media (max-width: 768px) {
+    .main_section .container,
+    .tabs_section .container,
+    .contact .container {
+        padding-right: 1rem !important;
+        padding-left: 1rem !important;
+    }
+    /* .main_section .row > [class^="col-"] {
+    margin-bottom: 1rem;
+  } */
+}
+
+/* ============================================ */
+/* ========= NAVBAR / TABS Section ============ */
+/* ============================================ */
+
+/* Ensure navbar toggler icon is visible on smaller screens if needed */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg ..."); /* or let Bootstrap handle */
+}
+
+/* Stack tab pills vertically at very small breakpoints (optional) */
+/* @media (max-width: 576px) {
+  .tabs_section .nav-pills {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .tabs_section .nav-item {
+    width: 100%;
+  }
+  .tabs_section .nav-link {
+    width: 100%;
+    text-align: center;
+  }
+} */
+
+/* ============================================ */
+/* =========== .main_section Cards ============ */
+/* ============================================ */
+
+/* Example: reduce the height / padding for .search_cards images on mobile */
+@media (max-width: 576px) {
+    .main_section .search_cards .image-container,
+    .main_section .search_cards .image-container .card-body {
+        min-height: 120px;
+    }
+    .main_section .search_cards h4 {
+        font-size: 1rem !important;
+    }
+}
+
+/* ============================================ */
+/* =========== .tabs_section Content ========== */
+/* ============================================ */
+
+/* If you have multiple cards side by side, ensure they wrap nicely on smaller screens */
+@media (max-width: 576px) {
+    /* .tabs_section .col-3,
+  .tabs_section .col-4,
+  .tabs_section .col-6 {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  } */
+    /* .tabs_section .carousel .row > [class^="col-"] {
+    margin-bottom: 1rem;
+  } */
+}
+
+/* ============================================ */
+/* ======== .call_to_action Section =========== */
+/* ============================================ */
+
+/* Stack the .call_to_action card items vertically on smaller devices */
+@media (max-width: 768px) {
+    .call_to_action .card .row {
+        flex-direction: column;
+        text-align: center;
+    }
+    .call_to_action .card .col-md-5,
+    .call_to_action .card .col-md-7 {
+        max-width: 100%;
+    }
+    .call_to_action .card .col-md-5 {
+        margin-bottom: 1rem;
+    }
+    .call_to_action h3 {
+        font-size: 1.25rem !important;
+    }
+    .call_to_action_button {
+        width: 100%;
+        padding: 14px !important;
+        font-size: 1rem !important;
+    }
+}
+
+/* ============================================ */
+/* ============ .contact Section ============== */
+/* ============================================ */
+
+/* Control form spacing on mobile */
+@media (max-width: 576px) {
+    .contact .form-floating label {
+        font-size: 0.85rem !important;
+    }
+    .contact .form-control {
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* ============================================ */
+/* ============= Footer Section =============== */
+/* ============================================ */
+
+/* Make footer columns stack on mobile */
+@media (max-width: 576px) {
+    footer .row.gy-4 > [class^="col-"] {
+        width: 100% !important;
+        margin-bottom: 1rem;
+    }
+    footer .links h5 {
+        font-size: 1rem !important;
+    }
+    footer .links ul li {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* 
+  Feel free to add more breakpoints or refine the ones above. 
+  You can also use Bootstrap’s default breakpoints: 
+     - xs: up to 576px 
+     - sm: 576px to 768px 
+     - md: 768px to 992px 
+     - lg: 992px to 1200px 
+     - xl: 1200px and up
+*/
+
+/* ========== Tab 1 Carousel Responsive Overrides ========== */
+/* Target the first tab’s carousel by its ID (carouselAboutCompany) */
+
+/* On screens smaller than 992px, each item goes from .col-3 (25%) to .col-6 (50%) 
+   That way each slide only shows 2 images side by side instead of 4.
+*/
+@media (max-width: 992px) {
+    #carouselAboutCompany .carousel-item .col-3 {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+}
+
+/* Optionally, on smaller phones you can shrink the images slightly */
+@media (max-width: 576px) {
+    #carouselAboutCompany .carousel-item .col-3 img {
+        /* Adjust image size to your liking */
+        max-width: 100px !important;
+        height: auto;
+    }
+}
